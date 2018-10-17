@@ -1,10 +1,12 @@
 (function(exports) {
-  this.note = ''
 
   function noteObject(string) {
     this.note = string
-    return this.note;
   };
+
+  noteObject.prototype.returnText = function () {
+    return this.note
+  }
 
   exports.noteObject = noteObject;
 })(this);

@@ -1,25 +1,27 @@
-function testNoteString() {
-  var noteobject = new noteObject("hello");
-  stringChecker.isTrue(noteobject.note === "hello" );
-};
-testNoteString();
+(function(exports){
+  function testNoteString() {
+    var noteobject = new noteObject("hello");
+    stringChecker.isTrue(noteobject.note === "hello" );
+  };
 
-function testNoteisString() {
-  var noteobject = new noteObject("hello");
-  isString(noteobject.note);
-};
+  function testNoteisString() {
+    var noteobject = new noteObject("hello");
+    isString(noteobject.note);
+  };
 
-testNoteisString();
+  function testreturnText() {
+    var noteobject = new noteObject("hello");
+    stringChecker.isTrue(noteobject.returnText() === "hello");
+  };
+
+  testNoteisString();
+  testreturnText();
+  testNoteString();
+})(this);
 
 
-function testNoteListisArray() {
-  var noteobject = new noteObject("hello")
-  var noteobject1 = new noteObject("goodbye")
-  var notelist = new noteList()
-  isArray(notelist.list)
-}
 
-testNoteListisArray();
+
 
 // function testNoteListArray() {
 //   var notelist = new noteList
