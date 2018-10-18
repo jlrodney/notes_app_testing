@@ -7,19 +7,40 @@ var stringChecker = {
     }
   }
 };
+//
+// Assert.prototype.describe = function (description, callback) {
+//   console.log(description)
+//   callback
+// }
+//
+// Assert.prototype.matchers = function(exp) {}
+//
+// const matchers = (exp) => ({
+//   toBe: (assertion) => {
+//     if (exp === assertion) {
+//       console.log('pass')
+//       return true
+//     } else {
+//       console.log('fail')
+//       return false
+//     }
+//   }
+// })
+//
+//
 
-var describe = function(message, callback) {
-      document.write(message +"</span></br>" );
-      callback();
-},
+// var describe = function(message, callback) {
+//       document.write(message +"</span></br>" );
+//       callback();
+// },
 
-isSame: function(item, item2) {
-   if (item !== item2) {
-     throw new Error("THAT IS NOT THE SAME!!!");
-   } else {
-     return true;
-   }
- },
+// isSame: function(item, item2) {
+//    if (item !== item2) {
+//      throw new Error("THAT IS NOT THE SAME!!!");
+//    } else {
+//      return true;
+//    }
+//  },
 
 var instanceChecker = {
   isTrue: function(instanceChecker) {
@@ -51,10 +72,28 @@ var instanceChecker = {
     Assert.prototype.isTrue = function (assertionToCheck) {
   if (!assertionToCheck) {
     throw new Error("Assertion failed: " + assertionToCheck + " is not truthy");
-  };
+  } else {
+    console.log("Well done! that is true")
+  }
 };
 
   exports.Assert = Assert;
+})(this);
+
+(function(exports) {
+  const double = (object) => {
+    function TheDouble() {
+    }
+
+    for (var i = 0; i < Object.keys(object).length; i++){
+      TheDouble.prototype[Object.keys(object)[i]] = function (){
+        return TheDouble.prototype[Object.values(object)[i]];
+      }
+    }
+
+    return TheDouble();
+  }
+  exports.double = double;
 })(this);
 
 

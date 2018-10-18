@@ -14,10 +14,10 @@
 
   function testaddNote() {
     var assert = new Assert()
-    var noteListy = new noteList();
-    var note = new noteObject("hello");
-    noteListy.addNote(note)
-    assert.isTrue(noteListy.list.includes(note))
+    var noteListy = new noteList;
+    // var note = new noteObject("hello");
+    noteListy.addNote("hello")
+    assert.isTrue(noteListy.list.includes("hello"))
   }
 
   function testviewNotes() {
@@ -44,7 +44,7 @@
     var assert = new Assert()
     var noteListy = new noteList();
     noteListy.createNote('hello');
-    console.log(noteListy.list[0].note)
+    // console.log(noteListy.list[0].note)
     assert.isTrue(noteListy.list[0].note === 'hello')
   }
 
