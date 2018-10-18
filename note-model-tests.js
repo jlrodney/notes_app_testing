@@ -1,23 +1,25 @@
-(function(exports){
-  function testNoteString() {
-    var noteobject = new noteObject("hello");
-    stringChecker.isTrue(noteobject.note === "hello" );
-  };
+describe('Note model', function() {
+  it ('should create a string', function() {
+    var notey = new noteObject("hello", 0)
+    instanceChecker.isTrue(notey.note === "hello")
+  });
 
-  function testNoteisString() {
-    var noteobject = new noteObject("hello");
-    isString(noteobject.note);
-  };
+  it('should create a note which returns a string', function() {
+    var notey = new noteObject("hello", 0)
+    isString(notey.note)
+  })
 
-  function testreturnText() {
-    var noteobject = new noteObject("hello");
-    stringChecker.isTrue(noteobject.returnText() === "hello");
-  };
+  it('should return a string when returnText is called', function() {
+    var notey = new noteObject("hello", 0)
+    instanceChecker.isTrue(notey.returnText() === "hello")
+  })
 
-  testNoteisString();
-  testreturnText();
-  testNoteString();
-})(this);
+  it('should have an id', function() {
+    var notey = new noteObject("hello", 0)
+    instanceChecker.isTrue(notey.id === 0)
+  })
+})
+
 
 
 
