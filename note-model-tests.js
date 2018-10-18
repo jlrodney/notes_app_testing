@@ -1,4 +1,4 @@
-describe('Note model', function() {
+describe('Each note', function() {
   it ('should create a string', function() {
     var notey = new noteObject("hello", 0)
     instanceChecker.isTrue(notey.note === "hello")
