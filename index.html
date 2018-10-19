@@ -5,6 +5,7 @@
       <title> Title </title>
   </head>
     <body>
+
       <div id="testing"> </div>
 
       <div id="app"></div>
@@ -22,7 +23,15 @@
       <script src="note-list-view-tests.js"></script>
       <script src="note-list-model-tests.js"></script>
       <script src="single-note-view-tests.js"></script> -->
-
+      <form>
+        Please input note:<br>
+        <input id="text" type="text" name="text"><br>
+        <input type="submit" value="Submit">
+      </form>
+      <script>
+      controller = new NoteController()
+      controller.submitHandler()
+    </script>
 
 
       <!-- <script type="text/javascript">

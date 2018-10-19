@@ -23,6 +23,25 @@
   //   }
   // }
 
+  NoteController.prototype.submitHandler = function () {
+    document.createFromPage = this.createFromPage
+    document.noteListy = this.noteListy
+    document.getElementById("text").addEventListener("submit", function(clickEvent) {
+      clickEvent.preventDefault();
+
+      text = getElementById("text").value;
+      console.log(text)
+      document.createFromPage(text, document.noteListy);
+      document.noteviewclass = new ViewClass(document.noteListy)
+      document.getElementById("app").innerHTML = document.noteviewclass.htmlReturn()
+
+    })
+  };
+
+  NoteController.prototype.createFromPage = function (text, notelist) {
+    this.noteListy.createNote(text)
+  };
+
   NoteController.prototype.launch = function () {
     var notesListView = this.notesListView;
     var element = document.querySelector("#testing")
